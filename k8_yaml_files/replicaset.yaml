@@ -1,0 +1,22 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: myrs
+  namespace: default
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      city: Khi
+      country: Pak
+  template:
+    metadata: 
+      labels:
+       city: Khi
+       country: Pakistan
+    spec:
+      containers:
+      - name: rscontainers
+        image: yasirdocker/flag:latest
+        ports:
+        - containerPort: 80
