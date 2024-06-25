@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: podwithannotations
+  annotations:
+    dev_contact: yasir@onwire.pk
+    app_description: "This app is for dev use only"
+spec:
+  containers:
+  - image: yasirdocker/flag:latest
+    name: container1
+    ports:
+    - containerPort: 80

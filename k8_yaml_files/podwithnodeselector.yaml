@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+  name: podwithnodeselector
+  labels:
+    type: backend
+    city: khi
+    env: production
+spec:
+  nodeSelector:
+    disktype: ssd
+  containers:
+  - image: yasirdocker/flag:latest
+    name: container1
+    ports:
+    - containerPort: 80    
