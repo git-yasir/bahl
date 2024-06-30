@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigmap2
+data:
+  KEY1: value1
+  KEY2: value2
+  Key4: Value3
