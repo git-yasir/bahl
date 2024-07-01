@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podwithvol
+spec:
+  containers:
+    - name: container1
+      image: yasirdocker/flag:latest
+      volumeMounts:
+        - name: datavolume
+          mountPath: /voldata
+  volumes:
+    - name: datavolume
+      hostPath:
+        path: /home/docker/dataforpod
+        type: DirectoryOrCreate
