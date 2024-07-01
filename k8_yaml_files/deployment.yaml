@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bahl-deployment-for-app1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bahl-app1
+  template:
+    metadata:
+      labels:
+        app: bahl-app1
+    spec:
+      containers:
+        - name: appcontainer1
+          image: yasirdocker/flag:latest
+          volumeMounts:
+            - name: secret-volume
+              mountPath: /etc/secret
+              
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: firstsecret
