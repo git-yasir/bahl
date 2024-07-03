@@ -1,2 +1,7 @@
 yasirdockerdckr
 _pat_s7EZzz03rrUlGs7trb1DKOg2evA
+sudo visudo
+jenkins ALL=(ALL) NOPASSWD: ALL
+sudo usermod -aG docker jenkins
+groups jenkins
+sudo chown jenkins:docker /var/run/docker.sock
